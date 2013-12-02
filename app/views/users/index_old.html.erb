@@ -1,0 +1,28 @@
+<h1>Current Community List</h1>
+<li>every player who created an account</li>
+
+<table cellpadding="20">
+  <thead>
+    <tr>
+      <th>Battletag</th>
+      <th>Skype</th>
+      <th>Favorite Deck</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.battletag %></td>
+        <td><%= user.skype %></td>
+        <td><%= user.deck %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

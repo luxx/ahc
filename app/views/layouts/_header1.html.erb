@@ -1,0 +1,47 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="navbar-inner">
+
+<table cellpadding="5">
+  <tr>
+      <td><a href="http://hearthstone.gamepedia.com/Druid">Druid</a></td>
+      <td><a href="http://hearthstone.gamepedia.com/Hunter">Hunter</a></td>
+      <td><a href="http://hearthstone.gamepedia.com/Mage">Mage</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://hearthstone.gamepedia.com/Paladin">Paladin</a></td>
+    <td><a href="http://hearthstone.gamepedia.com/Priest">Priest</a></td>
+    <td><a href="http://hearthstone.gamepedia.com/Rogue">Rogue</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://hearthstone.gamepedia.com/Shaman">Shaman</a></td>
+    <td><a href="http://hearthstone.gamepedia.com/Warlock">Warlock</a></td>
+    <td><a href="http://hearthstone.gamepedia.com/Warrior">Warrior</a></td>
+</table>
+
+<nav>
+        <ul class="nav pull-right">
+          <li><%= link_to "Home", root_path %></li>
+          <li><%= link_to "about", about_path %></li>
+          <% if signed_in? %>
+	    <li><%= link_to "who signed up?", users_path %></li>
+            <li id="fat-menu" class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Account <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Profile", current_user %></li>
+                <li><%= link_to "edit profile", edit_user_path(current_user) %></li>
+                <li class="divider"></li>
+                <li>
+                  <%= link_to "Sign out", signout_path, method: "delete" %>
+                </li>
+              </ul>
+            </li>
+          <% else %>
+            <li><%= link_to "Sign in", signin_path %></li>
+          <% end %>
+        </ul>
+      </nav>
+
+</div>
+</header>

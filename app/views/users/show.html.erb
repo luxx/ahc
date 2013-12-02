@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<h1>
+  <%= gravatar_for(@user, options = { size: 150 }) %>
+  <%= @user.battletag %>
+</h1>
+<br>
+<h1>
+  <strong>Skype:</strong>
+  <%= @user.skype %>
+</h1>
+<br>
+<h1>
+  <strong>Favorite Deck:</strong>
+  <%= @user.deck %>
+</h1>
+<br>
+<br>
+<%= link_to 'Back to All Users', users_path %>

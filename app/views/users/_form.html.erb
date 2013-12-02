@@ -1,0 +1,41 @@
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :battletag, "BATTLETAG: (example - gamer#9999)" %>
+    <%= f.text_field :battletag %>
+  </div>
+  <div class="field">
+    <%= f.label :skype, "SKYPE name (optional)" %>
+    <%= f.text_field :skype %>
+  </div>
+  <div class="field">
+    <%= f.label :deck, "Favorite Hearthstone Class" %>
+    <%= f.text_field :deck %>
+  </div>
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :password %>
+    <%= f.text_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation, "Password Confirmation" %>
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div class="actions">
+    <%= f.submit "submit", class: "btn btn-large btn-primary" %>
+  </div>
+<% end %>

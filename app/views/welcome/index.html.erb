@@ -1,0 +1,11 @@
+<div class="center">
+  <a href="http://us.battle.net/hearthstone/en/">
+  <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTGyg2qHqoXK29OY2jaoFriqdkdpO86Ym6MrxdkubzmzJkZ0VLI"></a>
+  <h1>Welcome to AHC !</h1>
+  <h4>("another Hearthstone community")</h4>
+  <% unless signed_in? %>
+    <%= link_to "Sign up now!", signup_path, 
+                                class: "btn btn-large btn-primary" %>
+  <% end %>
+</div>
+

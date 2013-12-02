@@ -1,0 +1,10 @@
+<h1>Editing user</h1>
+
+<%= render 'form' %>
+
+<%= gravatar_for @user %><br>
+    <a href="http://gravatar.com/emails">change picture</a><br>
+    <br>
+
+<%= link_to 'Back to Profile', @user %> |
+<%= link_to 'All Users', users_path %>

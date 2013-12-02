@@ -1,0 +1,25 @@
+<h1>Llist of accounts</h1>
+
+<%= will_paginate %>
+
+<ul class="users">
+<table>
+  <tr>
+    <th></th>
+    <th>Battle Tag</th>
+    <th>Skype Name</th>
+    <th>Favorite Deck</th>
+    <th></th>
+  </tr>
+  <tr>
+    <% @users.each do |user| %>
+      <td><%= gravatar_for user, size: 52 %></td>
+      <td><%= link_to user.battletag, user %></td>
+      <td><% if current_user.admin? && !current_user?(user) %></td>
+      <td><%= link_to "delete", user, method: :delete,
+                                  data: { confirm: "You sure?" } %></td>
+  </tr>
+  <% end %>
+  
+<%= will_paginate %>
+</ul>
