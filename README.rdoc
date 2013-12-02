@@ -1,5 +1,12 @@
 This is a simple website for a hearthstone community that I am trying to set up.
-as of 12/1/13 it should run as is.
 
 Ruby version - 1.9.3p392
 rails 4.0.1
+
+to do list...
+impliment a swiss style tournament for players to participate in.
+- tournament page
+  -sign up
+  -matches page
+  -report score for players
+  -ability to delete players
